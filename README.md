@@ -1,6 +1,6 @@
 ## Spartan
 
-A Java implementation of Spartan using BLS12-381 or Ristretto.
+A Java implementation of Spartan using BLS12-381 and Ristretto.
 
 `Spartan` is a high-speed zero-knowledge proof system, a cryptographic primitive that enables a prover to prove a mathematical statement to a verifier without revealing anything besides the validity of the statement. 
 This repository provides a Java implementation that implements a zero-knowledge succinct non-interactive argument of knowledge (zkSNARK), which is a type of zero-knowledge proof system with short proofs and fast verification times. 
@@ -11,15 +11,27 @@ Based on the [Rust Spartan implementation](https://github.com/microsoft/Spartan)
 (Srinath Setty 
 CRYPTO 2020)
 
+## Highlights
+
+- **No "toxic" waste:** Spartan is a _transparent_ zkSNARK and does not require a trusted setup.
+
+- **General-purpose:** Spartan produces proofs for arbitrary NP statements.
+  
+- **Sub-linear verification costs:** Spartan is the first transparent proof system with sub-linear verification costs for arbitrary NP statements (e.g., R1CS).
+
+- **Standardized security:** Spartan's security relies on the hardness of computing discrete logarithms (a standard cryptographic assumption) in the random oracle model. This implementation supports BLS12-381 and Ristretto255 curves.
+
+- **State-of-the-art performance:** At the time of its creation, Spartan offered the fastest prover among transparent SNARKs. It still remains state of the art, with fast proving, short proofs and low verification times.
+
 ### Gradle Groovy DSL
 ```
-implementation 'com.weavechain:spartan:1.0.0'
+implementation 'com.weavechain:spartan:1.0.3'
 ```
 
 ### Gradle Kotlin DSL
 
 ```
-implementation("com.weavechain:spartan:1.0.0")
+implementation("com.weavechain:spartan:1.0.3")
 ```
 
 #### Apache Maven
@@ -28,13 +40,13 @@ implementation("com.weavechain:spartan:1.0.0")
 <dependency>
   <groupId>com.weavechain</groupId>
   <artifactId>spartan</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 
 ### Usage
 
-Sample evaluation: 
+The following example shows how to use the library to create and verify a SNARK proof.
 
 ```java
 public static void testEvalTinyBls() throws IOException {
