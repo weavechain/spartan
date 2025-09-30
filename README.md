@@ -23,6 +23,10 @@ CRYPTO 2020)
 
 - **State-of-the-art performance:** At the time of its creation, Spartan offered the fastest prover among transparent SNARKs. It still remains state of the art, with fast proving, short proofs and low verification times.
 
+### Why Java?
+
+Java is one of the languages of choice for Fintech and Banking software. At the same time the use of advanced privacy preserving technologies is lagging behind in these sectors. One of the reasons could be that the libraries for advanced cryptographic primitives are not readily available, and this is our contribution to gradually close the gap.
+
 ### Gradle Groovy DSL
 ```
 implementation 'com.weavechain:spartan:1.0.3'
